@@ -3,6 +3,11 @@ package VisitorPattern;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the class document that contains list of document part
+ *
+ * @author Yuzhe Guo
+ */
 public class Document implements DocumentPart {
     List<DocumentPart> parts;
 
