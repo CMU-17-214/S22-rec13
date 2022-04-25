@@ -22,8 +22,8 @@ public class Demo {
         doc.addDocPart(new BoldText(bold));
         doc.addDocPart(new Hyperlink("(website)", link));
 
-        writeFile(doc.toMarkDown(), "test.md");
-        writeFile(doc.toHTML(), "test.html");
+        writeFile(doc.accept(new MarkDownVisitor()), "test.md");
+        writeFile(doc.accept(new HtmlVisitor()), "test.html");
     }
 
     // helper method to write to file.

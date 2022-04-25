@@ -2,21 +2,13 @@ package VisitorPattern;
 
 /**
  * the document part interface that can be converted to html or markdown.
- * TODO: modify the interface and create two new visitors.
  */
 public interface DocumentPart {
-
     /**
-     * transform this document to HTML format.
+     * accept different visitor to get the string of class.
      *
-     * @return the string of document
+     * @param visitor visitor, can be html or markdown
+     * @return string format of part
      */
-    String toHTML();
-
-    /**
-     * transform this document to MarkDown format.
-     *
-     * @return the string of document
-     */
-    String toMarkDown();
+    String accept(Visitor visitor);
 }

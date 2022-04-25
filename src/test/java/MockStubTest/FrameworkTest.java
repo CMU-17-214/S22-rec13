@@ -53,8 +53,7 @@ public class FrameworkTest {
     @Test
     public void testUpdateRecordContainsNotMethodCall() {
         // stub the dbManager contains to return true
-        // TODO: use when().thenReturn() to set the stub
-
+        when(dbManager.contains(sampleNews)).thenReturn(true);
         // try call the method
         framework.updateRecord(sampleNews);
         // verify the addRecord is never called
@@ -68,8 +67,7 @@ public class FrameworkTest {
     @Test
     public void testUpdateRecordNotContainsMethodCall() {
         // stub the dbManager contains to return false
-        // TODO: use when().thenReturn() to set the stub
-
+        when(dbManager.contains(sampleNews)).thenReturn(false);
         // try call the method
         framework.updateRecord(sampleNews);
         // verify the addRecord is called once
