@@ -48,7 +48,8 @@ public class FrameworkTest {
     }
 
     /**
-     * test if news not in db, then addRecord is called once
+     * test that if news in db, then the addRecord method
+     * is never called. using verify()
      */
     @Test
     public void testUpdateRecordContainsNotMethodCall() {
@@ -62,8 +63,7 @@ public class FrameworkTest {
     }
 
     /**
-     * test that if news in db, then the addRecord method
-     * is never called. using verify()
+     * test if news not in db, then addRecord is called once
      */
     @Test
     public void testUpdateRecordNotContainsMethodCall() {
