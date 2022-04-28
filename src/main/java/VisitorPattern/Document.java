@@ -19,25 +19,16 @@ public class Document implements DocumentPart {
         this.parts = parts;
     }
 
-    @Override
-    public String toHTML() {
-        StringBuilder sb = new StringBuilder();
-        for (DocumentPart part : parts) {
-            sb.append(part.toHTML());
-        }
-        return sb.toString();
-    }
-
-    @Override
-    public String toMarkDown() {
-        StringBuilder sb = new StringBuilder();
-        for (DocumentPart part : parts) {
-            sb.append(part.toMarkDown());
-        }
-        return sb.toString();
-    }
-
     public void addDocPart(DocumentPart part) {
         this.parts.add(part);
+    }
+
+    @Override
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
+    }
+
+    public List<DocumentPart> getParts() {
+        return parts;
     }
 }
