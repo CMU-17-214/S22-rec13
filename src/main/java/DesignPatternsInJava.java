@@ -69,6 +69,8 @@ public class DesignPatternsInJava {
         /**
          * When we want to create string in Java. It is recommended to use StringBuilder
          * because it is more efficient and convenient.
+         * We can also use String.format() and String.valueOf() to get a string.
+         *
          * What pattern is StringBuilder?
          * What is the implementation of StringBuilder?
          */
@@ -78,6 +80,10 @@ public class DesignPatternsInJava {
         String str2 = builder.toString();
         System.out.println(str1);
         System.out.println(str2);
+
+        // different ways to build the string
+        String str3 = String.format("I am %s years old", 23);
+        String str4 = String.valueOf(17514);
     }
 
     public static void pattern4() {
@@ -102,7 +108,7 @@ public class DesignPatternsInJava {
          * We can use Arrays.adList() method.
          */
         List<Integer> list1 = Arrays.asList(2020, 2022);
-        List<String> list2 = Arrays.asList("Malfoy", "Snap");
+        List<String> list3 = Arrays.asList("Malfoy", "Snap");
     }
 
     public static void pattern6() {
@@ -136,7 +142,7 @@ public class DesignPatternsInJava {
         myList.add("Bowtruckles");
         myList.add("Zouwu");
         myList.forEach(s -> System.out.println(s));
-        Iterator iterator = myList.iterator();
+        Iterator<String> iterator = myList.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
