@@ -27,7 +27,7 @@ public class FrameworkTest {
     NewsRecord sampleNewsRecord;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         // mock the DataBaseManager class
         dbManager = mock(DataBaseManager.class);
         framework = new Framework(dbManager);
@@ -48,7 +48,8 @@ public class FrameworkTest {
     }
 
     /**
-     * test if news not in db, then addRecord is called once
+     * test that if news in db, then the addRecord method
+     * is never called. using verify()
      */
     @Test
     public void testUpdateRecordContainsNotMethodCall() {
@@ -61,8 +62,7 @@ public class FrameworkTest {
     }
 
     /**
-     * test that if news in db, then the addRecord method
-     * is never called. using verify()
+     * test if news not in db, then addRecord is called once
      */
     @Test
     public void testUpdateRecordNotContainsMethodCall() {
@@ -94,7 +94,8 @@ public class FrameworkTest {
         // get the NewsRecord that has been captured.
         NewsRecord captured = myCaptor.getValue();
 
-        // check
+        // check, note that because they are both record, so their equals method is implemented
+        // so we can use assertEquals, otherwise we need to check each fields.
         assertEquals(sampleNewsRecord, captured);
     }
 }
