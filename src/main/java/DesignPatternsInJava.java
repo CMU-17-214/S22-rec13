@@ -55,6 +55,8 @@ public class DesignPatternsInJava {
         Comparator<String> comparator2 = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
+                assert (o1 != null) && (o2 != null);
+                assert (o1.length() > 0) && (o2.length() > 0);
                 return o1.charAt(0) - o2.charAt(0);
             }
         };
