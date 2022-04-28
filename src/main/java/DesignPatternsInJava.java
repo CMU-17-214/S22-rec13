@@ -29,6 +29,7 @@ public class DesignPatternsInJava {
          * when we are going to use a thread safe map, we can use Collections to create a new
          * synchronizedMap.
          * What is the implementation of synchronizedMap?
+         * Pattern: Decorator pattern, factory pattern
          */
         Map<String, String> map = new HashMap<>();
         map.put("course name", "15214");
@@ -43,6 +44,7 @@ public class DesignPatternsInJava {
          * When we are going to sort the list, we use Collections.sort() and pass the list
          * and comparator as input variables.
          * For each comparator, we need to declare its compare method.
+         * Pattern: strategy pattern
          */
         Comparator<String> comparator1 = new Comparator<String>() {
             @Override
@@ -75,6 +77,8 @@ public class DesignPatternsInJava {
          *
          * What pattern is StringBuilder?
          * What is the implementation of StringBuilder?
+         *
+         * Pattern: builder pattern, abstract factory pattern
          */
         StringBuilder builder = new StringBuilder();
         builder.append("This").append(" ").append("is ").append(17514);
@@ -97,6 +101,8 @@ public class DesignPatternsInJava {
          * We can use Collections to get immutable emptyMap, emptyList to avoid Unwanted NullPointerException.
          *
          * What is the implementation of emptyMap and emptyList?
+         *
+         * Pattern: singleton pattern
          */
         Runtime runtime = Runtime.getRuntime();
         Map<String, Integer> emptyMap = Collections.emptyMap();
@@ -108,6 +114,8 @@ public class DesignPatternsInJava {
          * Java's array and List interface is different, if we need to create an
          * array {1, 3, 4} but has the same behavior as List interface(add, size, isEmpty),
          * We can use Arrays.adList() method.
+         *
+         * Pattern: adaptor pattern
          */
         List<Integer> list1 = Arrays.asList(2020, 2022);
         List<String> list3 = Arrays.asList("Malfoy", "Snap");
@@ -121,6 +129,8 @@ public class DesignPatternsInJava {
          * JPanel to the JFrame and set visible to true.
          *
          * What class does JButton, JPanel, JTextArea extend?
+         *
+         * Pattern: composite pattern
          */
         JFrame frame = new JFrame("design patterns");
         frame.setSize(300, 150);
@@ -138,6 +148,7 @@ public class DesignPatternsInJava {
     public static void pattern7() {
         /**
          * we can use forEach or iterator to iterate the element in the list.
+         * Pattern: iterator pattern
          */
         List<String> myList = new ArrayList<>();
         myList.add("Niffler");
