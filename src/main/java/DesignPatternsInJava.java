@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -75,10 +76,11 @@ public class DesignPatternsInJava {
          * because it is more efficient and convenient.
          * We can also use String.format() and String.valueOf() to get a string.
          *
-         * What pattern is StringBuilder?
          * What is the implementation of StringBuilder?
          *
-         * Pattern: builder pattern, abstract factory pattern
+         * Pattern: builder pattern, static factory method (not in 23 design patterns, not abstract factory Pattern).
+         * please refer to Effective Java(3rd) item 1 for static factory method.
+         * please refer to item 2 for detailed discussion of builder pattern.
          */
         StringBuilder builder = new StringBuilder();
         builder.append("This").append(" ").append("is ").append(17514);
@@ -87,9 +89,10 @@ public class DesignPatternsInJava {
         System.out.println(str1);
         System.out.println(str2);
 
-        // different ways to build the string
+        // different ways to build the string, BigInteger
         String str3 = String.format("I am %s years old", 23);
         String str4 = String.valueOf(17514);
+        BigInteger in = BigInteger.valueOf(5);
     }
 
     public static void pattern4() {
